@@ -8,42 +8,76 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+<header id="main-header">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Always visible menu icon -->
+    <div class="logo">
         <h1>Vicandy Properties</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#properties">Properties</a></li>
-                <li><a href="#amenities">Amenities</a></li>
-                <li><a href="#location">Location</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
+</header>
+<script>
+    // Toggle side menu open and close
+    function toggleMenu() {
+        console.log("Menu toggled"); // Check if this log appears
+        const sideMenu = document.getElementById('side-menu');
+        sideMenu.classList.toggle('open');
+    }
+</script>
+
+<!-- Side Navigation Menu -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Menu icon inside the menu as a close button -->
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Experience Exceptional Living with Vicandy Properties</h2>
-            <p>Your ideal rental awaits in the heart of the city.</p>
-            <a href="#properties" class="btn-primary">Explore Properties</a>
-        </div>
-    </section>
+<section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/2801656-hd_1280_720_24fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+        <h2>Find Your Next Home with Us</h2>
+        <div class="hero-divider"></div>
+        <p>Experience the comfort and privacy of single-family living in beautiful, well-maintained communities.</p>
+    </div>
+</section>
 
-    <!-- Featured Properties Section -->
-    <section id="properties">
-        <h3>Featured Properties</h3>
-        <div class="property-list">
-            <!-- Property items go here -->
-            <div class="property-item">
-                <img src="assets/images/property1.jpg" alt="Property Image 1">
-                <h4>Property Name</h4>
-                <p>Beautiful 2-bedroom apartment with modern amenities.</p>
-                <a href="#contact" class="btn-secondary">Contact for Details</a>
-            </div>
-            <!-- Additional properties can be added similarly -->
-        </div>
-    </section>
+<!-- Facts Section -->
+<section id="facts" class="facts-section">
+    <div class="fact">
+        <h2>Over 40 Properties</h2>
+        <p>Single-family homes available for rent.</p>
+    </div>
+    <div class="fact">
+        <h2>Quality Maintenance</h2>
+        <p>Dedicated teams ensuring high standards.</p>
+    </div>
+    <div class="fact">
+        <h2>Pet-Friendly Spaces</h2>
+        <p>Accommodations for your furry family members.</p>
+    </div>
+    <div class="fact">
+        <h2>Prime Locations</h2>
+        <p>Close to schools, parks, and amenities.</p>
+    </div>
+</section>
+
+<!-- Featured Properties Section -->
+<section id="featured-properties" class="featured-properties">
+    <img src="https://via.placeholder.com/600x400" alt="House Image" class="property-image">
+    <div class="property-info">
+        <h3>Explore Our Featured Properties</h3>
+        <p>Discover our range of beautifully maintained, family-friendly homes available in prime locations.</p>
+        <a href="#properties" class="btn-primary">View Properties</a>
+    </div>
+</section>
 
     <!-- Amenities Section -->
     <section id="amenities">
@@ -67,22 +101,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h3>Contact Us</h3>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Vicandy Properties. All rights reserved.</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+
 </body>
 </html>
 

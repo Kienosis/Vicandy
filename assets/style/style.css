@@ -12,79 +12,283 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
-header {
-    background-color: #ffffff;
-    color: #333;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e0e0e0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 1.5rem;
-    color: #2b2b2b;
-    margin-bottom: 0.5rem;
-}
-
-header nav ul {
-    list-style: none;
+/* Header Styling */
+#main-header {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(128, 128, 128, 0.6); /* Translucent grey */
+    color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+}
+
+/* Left-aligned Menu Icon */
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 5;
+    margin-left: 1rem; /* Left align in header */
+}
+
+/* When header is scrolled */
+.scrolled {
+    background-color: #808080;
+}
+
+/* Logo Styling */
+.logo {
+    text-align: center;
+    flex: 1;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Side Menu Styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.95); /* Match grey of header */
+    padding-top: 2rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+    z-index: 4;
+}
+
+/* Side Menu Icon Inside Menu */
+.side-menu .menu-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; /* Icon position when inside side menu */
+    color: #333; /* Dark icon inside the side menu */
+}
+/* Side Menu Styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.95); /* Match grey of header */
+    padding-top: 2rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+    z-index: 4;
+}
+
+/* Style for Side Menu Navigation Links */
+.side-menu ul {
+    list-style: none;
+    padding: 3rem 1rem 0 1rem; /* Increased padding-top to separate Home link from menu icon */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-header nav a {
-    color: #333;
+
+.side-menu a {
+    color: #ffffff; /* White text color */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    padding: 0.5rem 1rem;
 }
 
-header nav a:hover {
-    color: #0077cc;
+.side-menu a:hover {
+    background-color: #4c4c4c;
 }
 
-/* Hero Section */
-.hero {
-    background-image: url('../images/hero.jpg');
-    background-size: cover;
-    background-position: center;
+
+/* Side Menu Open State */
+.side-menu.open {
+    left: 0; /* Slide menu in from the left */
+}
+
+/* Position Side Menu Icon Consistently */
+.side-menu .menu-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
     color: #ffffff;
-    text-align: center;
-    padding: 5rem 2rem;
+    z-index: 6; /* Ensure it's above menu items */
+}
+
+/* Hero Section with Video */
+.hero {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.hero::after {
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    max-width: 900px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+}
+
+.hero-divider {
+    width: 80%;
+    height: 4px;
+    margin: 1rem auto;
+    background: linear-gradient(to right, transparent, #ffffff, transparent);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    max-width: 75%;
+    margin: 0 auto;
+    opacity: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Dark overlay effect for video background */
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1;
 }
 
-.hero-content {
+/* Facts Section Styling */
+.facts-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f0f0f0;
+    gap: 2rem; /* Add spacing between each .fact */
+}
+
+.fact {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically within each .fact */
+    align-items: center;
+    text-align: center;
     position: relative;
-    z-index: 2;
 }
 
-.hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+/* Divider Lines */
+.fact:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%; /* Full height to align with text */
+    background-color: #cccccc;
+}
+
+.fact h2 {
+    font-size: 2rem;
     font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 0.5rem;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.fact p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+.property-image {
+    width: 50%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.property-info {
+    max-width: 400px;
+    text-align: left;
+}
+
+.property-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+}
+
+.property-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 .btn-primary {
-    background-color: #0077
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #0077cc;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005fa3;
+}
