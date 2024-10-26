@@ -392,6 +392,9 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
+    .login-button {
+        display: none; /* Hide login button in the header for mobile, as it will be in the side menu */
+    }
     .hero-content h2 {
         font-size: 2rem;
     }
