@@ -7,34 +7,23 @@
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-    <!-- Header Section -->
+
 <header id="main-header">
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Always visible menu icon -->
+    <div class="menu-icon">&#9776;</div> <!-- Header menu icon -->
     <div class="logo">
         <h1>Vicandy Properties</h1>
     </div>
 </header>
-<script>
-    // Toggle side menu open and close
-    function toggleMenu() {
-        console.log("Menu toggled"); // Check if this log appears
-        const sideMenu = document.getElementById('side-menu');
-        sideMenu.classList.toggle('open');
-    }
-</script>
 
 <!-- Side Navigation Menu -->
 <nav id="side-menu" class="side-menu">
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Menu icon inside the menu as a close button -->
+    <div class="menu-icon">&#9776;</div> <!-- Menu icon inside the menu as a close button -->
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#properties">Properties</a></li>
-        <li><a href="#amenities">Amenities</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Properties</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-
 
     <!-- Hero Section -->
 <section id="home" class="hero">
@@ -70,43 +59,71 @@
 </section>
 
 <!-- Featured Properties Section -->
-<section id="featured-properties" class="featured-properties">
-    <img src="assets/pexels-scottwebb-1029599.jpg" alt="House Image" class="property-image">
-    <div class="property-info">
-        <h3>Explore Our Featured Properties</h3>
-        <p>Discover our range of beautifully maintained, family-friendly homes available in prime locations.</p>
-        <a href="#properties" class="btn-primary">View Properties</a>
+<section id="featured-properties" class="featured-properties-section">
+    <h2 class="section-title">Vicandy Portfolio of Properties</h2>
+    <div class="properties-grid">
+        <div class="property-card">
+            <img src="https://via.placeholder.com/400x300" alt="Property Image 1" class="property-image">
+            <div class="overlay">
+                <h3>Property Name 1</h3>
+                <p>Beautiful single-family home in a prime location.</p>
+            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://via.placeholder.com/400x300" alt="Property Image 2" class="property-image">
+            <div class="overlay">
+                <h3>Property Name 2</h3>
+                <p>Spacious property with modern amenities.</p>
+            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://via.placeholder.com/400x300" alt="Property Image 3" class="property-image">
+            <div class="overlay">
+                <h3>Property Name 3</h3>
+                <p>Cozy and comfortable home for families.</p>
+            </div>
+        </div>
+        <!-- Add more property cards as needed -->
     </div>
 </section>
 
-    <!-- Amenities Section -->
-    <section id="amenities">
-        <h3>Amenities</h3>
-        <p>Explore the range of amenities provided by Vicandy Properties to enhance your lifestyle.</p>
-        <ul>
-            <li>Swimming Pool</li>
-            <li>Fitness Center</li>
-            <li>On-Site Parking</li>
-            <li>Pet-Friendly Spaces</li>
-        </ul>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location">
-        <h3>Our Location</h3>
-        <div class="map">
-            <!-- Embed map here or provide an image placeholder -->
-            <p>Map placeholder for property locations</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Vicandy Properties. All rights reserved.</p>
     </footer>
+<!-- JavaScript to handle the menu toggle -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Vicandy Properties website loaded');
+    
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon'); // Header menu icon
+    const menuIconInside = sideMenu.querySelector('.menu-icon'); // Menu icon inside side menu
 
+    // Toggle side menu open and close
+    function toggleMenu(event) {
+        event.stopPropagation(); // Prevent the click from bubbling up
+        sideMenu.classList.toggle('open'); // Toggle 'open' class
+        console.log('Menu toggled');
+    }
+    
+    // Close the side menu when clicking outside of it
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+            console.log('Menu closed on outside click');
+        }
+    }
+
+    // Attach the toggleMenu function to both menu icons
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+
+    // Attach event listener to the document for outside clicks
+    document.addEventListener('click', closeMenuOnClickOutside);
+});
+</script>
 
 </body>
 </html>
