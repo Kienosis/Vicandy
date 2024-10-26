@@ -6,30 +6,30 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #2b2b2b;
     background-color: #f8f8f8;
     line-height: 1.6;
 }
 
-/* Apply Lato to other elements as needed */
+/* Apply Raleway to headers */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700; /* Bold */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700; /* Bold for headers */
 }
 
+/* Apply Raleway to other elements */
 p, a, button, input, textarea {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Regular */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400; /* Regular weight for body text */
 }
-
 
 /* Header Styling */
 #main-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background-color: rgba(128, 128, 128, 0.6); /* Translucent grey */
     color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
@@ -77,13 +77,13 @@ p, a, button, input, textarea {
     background-color: #333;
 }
 
-/* Left-aligned Menu Icon */
+/* Menu Icon */
 .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
     color: #ffffff;
     z-index: 5;
-    margin-left: 1rem; /* Left align in header */
+    margin-left: 1rem;
 }
 
 /* When header is scrolled */
@@ -105,22 +105,14 @@ p, a, button, input, textarea {
     letter-spacing: 1px;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* Side Menu Styling */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: -250px;
     width: 250px;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.95); /* Match grey of header */
+    background-color: rgba(128, 128, 128, 0.95);
     padding-top: 2rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: left 0.3s ease;
@@ -131,36 +123,22 @@ p, a, button, input, textarea {
 .side-menu .menu-icon {
     position: absolute;
     top: 1rem;
-    right: 1rem; /* Icon position when inside side menu */
-    color: #333; /* Dark icon inside the side menu */
-}
-/* Side Menu Styling */
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hidden by default */
-    width: 250px;
-    height: 100%;
-    background-color: rgba(128, 128, 128, 0.95); /* Match grey of header */
-    padding-top: 2rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease;
-    z-index: 4;
+    right: 1rem;
+    color: #333;
 }
 
 /* Style for Side Menu Navigation Links */
 .side-menu ul {
     list-style: none;
-    padding: 3rem 1rem 0 1rem; /* Increased padding-top to separate Home link from menu icon */
+    padding: 3rem 1rem 0 1rem;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-
 .side-menu a {
-    color: #ffffff; /* White text color */
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -171,19 +149,9 @@ p, a, button, input, textarea {
     background-color: #4c4c4c;
 }
 
-
 /* Side Menu Open State */
 .side-menu.open {
-    left: 0; /* Slide menu in from the left */
-}
-
-/* Position Side Menu Icon Consistently */
-.side-menu .menu-icon {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: #ffffff;
-    z-index: 6; /* Ensure it's above menu items */
+    left: 0;
 }
 
 /* Hero Section with Video */
@@ -192,8 +160,9 @@ p, a, button, input, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 50vh; /* Adjusted height for mobile */
     overflow: hidden;
+    padding: 1rem;
 }
 
 .hero-video {
@@ -214,18 +183,16 @@ p, a, button, input, textarea {
     color: #ffffff;
     max-width: 900px;
     padding: 2rem;
-    overflow: hidden;
 }
 
 .hero-content h2 {
-    font-size: 3rem;
+    font-size: 2rem; /* Adjusted for mobile */
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    white-space: nowrap;
 }
 
 .hero-divider {
@@ -236,9 +203,8 @@ p, a, button, input, textarea {
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Adjusted for mobile */
     line-height: 1.5;
-    font-weight: 300;
     max-width: 75%;
     margin: 0 auto;
     opacity: 1;
@@ -253,204 +219,74 @@ p, a, button, input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6); /* Adjusted to make the overlay darker */
     z-index: 1;
 }
+
+/* Enhanced text shadow for readability */
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow for better readability */
+    white-space: nowrap;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #ffffff;
+    max-width: 75%;
+    margin: 0 auto;
+    opacity: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow for paragraphs */
+}
+
 
 /* Facts Section Styling */
 .facts-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 3rem 2rem;
     background-color: #f0f0f0;
-    gap: 2rem; /* Add spacing between each .fact */
+    gap: 2rem;
 }
 
 .fact {
-    flex: 1;
+    max-width: 200px;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically within each .fact */
-    align-items: center;
     text-align: center;
-    position: relative;
 }
 
-/* Divider Lines */
 .fact:not(:last-child)::after {
     content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 100%; /* Full height to align with text */
+    display: block;
+    margin: 1rem auto;
+    height: 1px;
+    width: 80%;
     background-color: #cccccc;
 }
 
 .fact h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #2b2b2b;
     margin-bottom: 0.5rem;
 }
 
 .fact p {
     font-size: 1rem;
-    color: #666;
-    line-height: 1.4;
 }
 
-
-.property-image {
-    width: 50%;
-    max-width: 600px;
-    border-radius: 8px;
-}
-/* Featured Properties Section Styling */
-.featured-properties-section {
-    padding: 4rem 2rem;
-    background-color: #f8f8f8;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2b2b2b;
-    margin-bottom: 2rem;
-}
-
-.properties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.property-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.property-card:hover {
-    transform: scale(1.03);
-}
-
-.property-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.property-card:hover .overlay {
-    opacity: 1;
-}
-
-.overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.overlay p {
-    font-size: 1rem;
-    max-width: 80%;
-    text-align: center;
-}
-footer {
-    padding: 1.5rem;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-}
-.btn-primary {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: #0077cc;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #005fa3;
-}
-@media (max-width: 768px) {
-    .facts-section, .properties-grid {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .login-button {
-        display: none; /* Hide login button in the header for mobile, as it will be in the side menu */
-    }
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-}html {
-    scroll-behavior: smooth;
-}
-.side-menu a:focus {
-    background-color: #555;
-    outline: 2px solid #ffffff;
-}
 /* Contact Section Styling */
 .contact-section {
-    padding: 4rem 2rem;
+    padding: 2rem;
     text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-form,
-.contact-details {
-    width: 100%;
-    max-width: 400px;
-}
-
-.contact-form label {
-    display: block;
-    margin: 0.5rem 0 0.2rem;
-    font-weight: 600;
 }
 
 .contact-form input,
@@ -462,32 +298,49 @@ footer {
     border-radius: 4px;
 }
 
-.contact-form button {
-    width: 100%;
-}
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    #main-header {
+        padding: 1rem 2rem;
+    }
 
-.contact-details {
-    text-align: left;
-}
+    .login-button {
+        display: inline-block;
+    }
 
-.contact-details h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
+    .hero-content h2 {
+        font-size: 3rem;
+    }
 
-.contact-details p {
-    margin: 0.5rem 0;
-}
+    .facts-section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 
-.map-container {
-    margin-top: 2rem;
-}
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+	    .side-menu ul {
+        gap: 1rem; /* Reduce gap in mobile view */
+    }
 
-.map-container iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    border: 0;
-    border-radius: 8px;
+    .hero-content h2 {
+        font-size: 2rem; /* Smaller font size on mobile */
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr; /* Single-column grid on mobile */
+    }
+}
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_GA_TRACKING_ID');
+</script>
+@media (min-width: 1024px) {
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
