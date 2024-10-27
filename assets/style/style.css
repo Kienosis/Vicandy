@@ -1,3 +1,20 @@
+/* Variables */
+:root {
+    --primary-color: #0077cc;
+    --secondary-color: #4c4c4c;
+    --text-color: #2b2b2b;
+    --header-bg-color: rgba(128, 128, 128, 0.6);
+    --hero-overlay-color: rgba(0, 0, 0, 0.6);
+    --white-color: #ffffff;
+    --border-color: #e0e0e0;
+    --hover-color: #005fa3;
+    --hero-shadow: rgba(0, 0, 0, 0.7);
+    --font-size-h2: 3rem;
+    --font-size-h2-mobile: 2rem;
+    --font-size-p: 1.2rem;
+    --font-size-p-mobile: 1rem;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -7,11 +24,10 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: #2b2b2b;
+    color: var(--text-color);
     background-color: #f8f8f8;
     line-height: 1.6;
 }
-
 /* Apply Raleway to headers */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
@@ -30,9 +46,9 @@ p, a, button, input, textarea {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: rgba(128, 128, 128, 0.6); /* Translucent grey */
-    color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: var(--header-bg-color);
+    color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -40,32 +56,50 @@ p, a, button, input, textarea {
     transition: background-color 0.3s ease;
 }
 
-/* Login button in the header */
-.login-button {
+/* Centered Logo Styling */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--white-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Right-aligned Header Items */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-left: auto;
 }
 
+/* Login button in the header */
 .btn-login {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #0077cc;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    color: var(--white-color);
+    background-color: var(--primary-color);
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for the login button */
 .btn-login:hover {
-    background-color: #005fa3;
+    background-color: var(--hover-color);
 }
-
 /* Adjust side menu login button styling */
 .side-menu a.btn-login {
     padding: 0.5rem 1rem;
-    color: #ffffff;
-    background-color: #4c4c4c;
+    color: var(--white-color);
+    background-color: var(--secondary-color);
     text-decoration: none;
     border-radius: 4px;
     text-align: center;
@@ -81,28 +115,14 @@ p, a, button, input, textarea {
 .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--white-color);
     z-index: 5;
     margin-left: 1rem;
 }
 
-/* When header is scrolled */
+/* Scrolled Header */
 .scrolled {
     background-color: #808080;
-}
-
-/* Logo Styling */
-.logo {
-    text-align: center;
-    flex: 1;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 /* Side Menu Styling */
@@ -115,11 +135,10 @@ p, a, button, input, textarea {
     background-color: rgba(128, 128, 128, 0.95);
     padding-top: 2rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease;
+    transition: left 0.2s ease-in-out;
     z-index: 4;
 }
 
-/* Side Menu Icon Inside Menu */
 .side-menu .menu-icon {
     position: absolute;
     top: 1rem;
@@ -127,7 +146,6 @@ p, a, button, input, textarea {
     color: #333;
 }
 
-/* Style for Side Menu Navigation Links */
 .side-menu ul {
     list-style: none;
     padding: 3rem 1rem 0 1rem;
@@ -138,7 +156,7 @@ p, a, button, input, textarea {
 }
 
 .side-menu a {
-    color: #ffffff;
+    color: var(--white-color);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -146,10 +164,9 @@ p, a, button, input, textarea {
 }
 
 .side-menu a:hover {
-    background-color: #4c4c4c;
+    background-color: var(--secondary-color);
 }
 
-/* Side Menu Open State */
 .side-menu.open {
     left: 0;
 }
@@ -160,7 +177,7 @@ p, a, button, input, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh; /* Adjusted height for mobile */
+    height: 100vh;
     overflow: hidden;
     padding: 1rem;
 }
@@ -180,13 +197,13 @@ p, a, button, input, textarea {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: #ffffff;
+    color: var(--white-color);
     max-width: 900px;
     padding: 2rem;
 }
 
 .hero-content h2 {
-    font-size: 2rem; /* Adjusted for mobile */
+    font-size: var(--font-size-h2-mobile);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -199,19 +216,18 @@ p, a, button, input, textarea {
     width: 80%;
     height: 4px;
     margin: 1rem auto;
-    background: linear-gradient(to right, transparent, #ffffff, transparent);
+    background: linear-gradient(to right, transparent, var(--white-color), transparent);
 }
 
 .hero-content p {
-    font-size: 1rem; /* Adjusted for mobile */
+    font-size: var(--font-size-p-mobile);
     line-height: 1.5;
     max-width: 75%;
     margin: 0 auto;
-    opacity: 1;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Optional: Dark overlay effect for video background */
+/* Hero Overlay */
 .hero::before {
     content: '';
     position: absolute;
@@ -219,68 +235,49 @@ p, a, button, input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjusted to make the overlay darker */
+    background: var(--hero-overlay-color);
     z-index: 1;
 }
-
-/* Enhanced text shadow for readability */
-.hero-content h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffffff;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow for better readability */
-    white-space: nowrap;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    font-weight: 300;
-    color: #ffffff;
-    max-width: 75%;
-    margin: 0 auto;
-    opacity: 1;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow for paragraphs */
-}
-
 
 /* Facts Section Styling */
 .facts-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    align-items: stretch; /* Ensure all items stretch to the same height */
     padding: 3rem 2rem;
     background-color: #f0f0f0;
-    gap: 2rem;
+    gap: 2rem; /* Space between the fact items */
 }
 
 .fact {
+    display: flex;
+    flex-direction: column; /* Keep the content stacked */
+    align-items: center; /* Center align text */
     max-width: 200px;
     padding: 1rem;
-    text-align: center;
+    position: relative; /* Required for positioning the line */
 }
 
 .fact:not(:last-child)::after {
-    content: '';
-    display: block;
-    margin: 1rem auto;
-    height: 1px;
-    width: 80%;
-    background-color: #cccccc;
+    content: ''; /* Create a vertical line */
+    position: absolute; /* Position the line */
+    top: 0; /* Align to the top of the fact */
+    left: 100%; /* Position it to the right of the fact */
+    height: 100%; /* Stretch the line to the height of the fact */
+    width: 1px; /* Width of the line */
+    background-color: #cccccc; /* Line color */
 }
 
 .fact h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    text-align: center; /* Center the heading text */
 }
 
 .fact p {
     font-size: 1rem;
+    text-align: center; /* Center the paragraph text */
 }
 
 /* Contact Section Styling */
@@ -298,49 +295,351 @@ p, a, button, input, textarea {
     border-radius: 4px;
 }
 
-/* Media Queries for Larger Screens */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.contact-form-container {
+    flex: 1 1 450px;
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2 {
+    font-size: 1.8rem;
+    color: #0077cc;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-top: 1rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #0077cc;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005fa3;
+}
+
+.contact-details {
+    flex: 1 1 300px;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h3 {
+    font-size: 1.8rem;
+    color: #0077cc;
+    margin-bottom: 1rem;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.language-switcher a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.language-switcher a:hover {
+    text-decoration: underline;
+}
+
+/* Call to Action (CTA) Section Styling */
+.cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background-color: #f8f8f8;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-image {
+    width: 40%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cta-text {
+    flex: 1;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.cta-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.cta-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-apply {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    color: var(--white-color);
+    background-color: var(--hover-color);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apply:hover {
+    background-color: #004080;
+}
+/* About Us Section Styling */
+.about-section {
+    padding: 3rem 1.5rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Gallery Section Styling */
+.gallery-section {
+    padding: 3rem 1.5rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Contact Page Padding */
+.contact-page {
+    padding-top: 6rem; /* Adjust this based on the header size */
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
     #main-header {
         padding: 1rem 2rem;
     }
-
-    .login-button {
-        display: inline-block;
-    }
-
-    .hero-content h2 {
-        font-size: 3rem;
-    }
-
-    .facts-section {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .properties-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-	    .side-menu ul {
-        gap: 1rem; /* Reduce gap in mobile view */
-    }
-
-    .hero-content h2 {
-        font-size: 2rem; /* Smaller font size on mobile */
-    }
-
-    .properties-grid {
-        grid-template-columns: 1fr; /* Single-column grid on mobile */
-    }
 }
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'YOUR_GA_TRACKING_ID');
-</script>
-@media (min-width: 1024px) {
-    .properties-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* General styling for the contact section */
+.contact-section {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 50px;
+    background-image: url('assets/contact_img.jpg'); /* Adds background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 100vh;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+/* Container for contact details and form */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly */
+    width: 80%;
+    max-width: 1200px;
+    gap: 50px;
+    margin-top: 50px; /* Adds space above the content */
+}
+
+/* Contact information */
+
+.contact-heading {
+    text-align: left; /* Align left instead of center */
+    font-size: 3em; /* Increase font size */
+    font-weight: bold;
+    color: #fff; /* Ensure the color is white */
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    text-align: left; /* Align text to the left */
+    flex: 1;
+    max-width: 45%;
+}
+
+/* Heading styles */
+.contact-info h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contact item styles */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* More spacing for better visibility */
+}
+
+.contact-icon {
+    font-size: 2.5em; /* Increase icon size */
+    color: #ffc107; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+/* Contact form styling */
+.contact-form {
+    flex: 1;
+    max-width: 45%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input fields styling */
+.contact-form input,
+.contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffc107;
+    color: #fff;
+    padding: 15px 5px; /* Increased padding for larger fields */
+    font-size: 1.1em;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ffd54f;
+}
+
+/* Submit button styling */
+.contact-form button {
+    background-color: #ffc107;
+    border: none;
+    color: #000;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background-color: #e0a800;
+}
+
+/* Adjust alignment for contact details */
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* More space between items */
+}
+
+.business-hours {
+    margin-top: 15px; /* Adds space before business hours */
+}
+
+

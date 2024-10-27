@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vicandy Properties ofrece hermosas casas unifamiliares en alquiler en Louisville, KY. Disfruta de la comodidad, privacidad y conveniencia en comunidades bien mantenidas.">
+    <meta name="keywords" content="propiedades de alquiler en Louisville, casas unifamiliares, Vicandy Properties, gestión de propiedades, alquileres en Louisville">
+    <meta name="robots" content="index, follow">
+    <title>Propiedades en Vicandy | Casas de alquiler en Louisville</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="main-header">
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">
+        <h1>Vicandy Properties</h1>
+    </div>
+    <div class="header-right">
+        <div class="language-switcher">
+            <a href="index.html">English</a>
+            <a href="index_es.html">Español</a>
+        </div>
+        <div class="login-button">
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Inicio de sesión para residentes</a>
+        </div>
+    </div>
+</header>
+
+<!-- Side Navigation Menu -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li><a href="index_es.html">Hogar</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Propiedades</a></li>
+        <li><a id="contact-link" href="contact_es.html">Contacta con nosotros</a></li> <!-- Conditional Contact link -->
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Inicio de sesión para residentes</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-video" loading="lazy">
+        <source src="assets/2801656-hd_1280_720_24fps.mp4" type="video/mp4">
+        Su navegador no soporta la etiqueta de video.
+    </video>
+    <div class="hero-content">
+        <h2>Encuentra tu próximo hogar con nosotros</h2>
+        <div class="hero-divider"></div>
+        <p>Experimenta la comodidad y privacidad de vivir en una comunidad de casas unifamiliares bien mantenidas.</p>
+    </div>
+</section>
+
+<!-- Facts Section -->
+<section id="facts" class="facts-section">
+    <div class="fact">
+        <h2>Más de 40 propiedades</h2>
+        <p>Viviendas unifamiliares disponibles para alquiler.</p>
+    </div>
+    <div class="fact">
+        <h2>Mantenimiento de calidad</h2>
+        <p>Equipos dedicados que garantizan altos estándares.</p>
+    </div>
+    <div class="fact">
+        <h2>Espacios que admiten mascotas</h2>
+        <p>Alojamientos para tus familiares peludos.</p>
+    </div>
+    <div class="fact">
+        <h2>Ubicaciones privilegiadas</h2>
+        <p>Cerca de escuelas, parques y servicios.</p>
+    </div>
+</section>
+
+<!-- Sección de Llamado a la Acción -->
+<section id="cta-section" class="cta-section">
+    <div class="cta-content">
+        <img src="assets/cta_image.jpg" alt="Espacio acogedor de sala de estar con un perro" class="cta-image">
+        <div class="cta-text">
+            <h2>¿Listo para Encontrar tu Nuevo Hogar?</h2>
+            <p>Disfruta de la comodidad de vivir en una de nuestras hermosas y bien mantenidas propiedades unifamiliares. Solicita hoy para asegurar tu nuevo hogar.</p>
+            <a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank" class="btn-primary">Solicitar Ahora</a>
+        </div>
+    </div>
+</section>
+<!-- Sección Sobre Nosotros -->
+<section id="sobre-nosotros" class="about-section">
+    <h2>Sobre Vicandy Properties</h2>
+    <p>En Vicandy Properties, nos enorgullecemos de ofrecer casas unifamiliares de alta calidad, bien mantenidas y disponibles para alquiler en las mejores ubicaciones de Louisville. Nuestro compromiso con un excelente servicio y valores comunitarios nos convierte en una opción de confianza para familias que buscan un lugar cómodo y seguro para llamar hogar.</p>
+</section>
+
+<!-- Sección Galería de Fotos -->
+<section id="galeria" class="gallery-section">
+    <h2>Galería de Fotos</h2>
+    <div class="gallery">
+        <img src="assets/gallery/photo1.jpg" alt="Interior de la Propiedad" />
+        <img src="assets/gallery/photo2.jpg" alt="Vista del Vecindario" />
+        <!-- Agregar más imágenes o videos según sea necesario -->
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Propiedades Vicandy. Reservados todos los derechos.</p>
+</footer>
+
+<!-- Side Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon');
+    const menuIconInside = sideMenu.querySelector('.menu-icon');
+    const firstMenuItem = sideMenu.querySelector('a');
+
+    function toggleMenu(event) {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+        if (sideMenu.classList.contains('open')) {
+            firstMenuItem.focus();
+        }
+    }
+
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape' && sideMenu.classList.contains('open')) {
+            sideMenu.classList.remove('open');
+            menuIconHeader.focus();
+        }
+    }
+
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+</script>
+
+<!-- Conditional Contact Link JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const contactLink = document.getElementById('contact-link');
+    const isSpanish = window.location.pathname.includes('_es');
+    contactLink.setAttribute('href', isSpanish ? 'contact_es.html' : 'contact.html');
+});
+</script>
+
+<!-- Language Detection and Redirection -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userLang = navigator.language || navigator.userLanguage;
+    const currentPath = window.location.pathname;
+    const redirectFlag = sessionStorage.getItem('languageRedirect');
+
+    if (!redirectFlag) {
+        if (userLang.startsWith('es') && currentPath !== '/index_es.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index_es.html';
+        } else if (userLang.startsWith('en') && currentPath !== '/index.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index.html';
+        }
+    }
+});
+</script>
+
+<link rel="alternate" hreflang="es" href="https://vicandyproperties.com/index_es.html">
+</body>
+</html>
