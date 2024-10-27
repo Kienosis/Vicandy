@@ -6,7 +6,47 @@
     <title>Contact Us | Vicandy Properties</title>
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .parallax {
+            position: relative;
+            height: 100vh; /* Full height for parallax effect */
+            overflow: hidden; /* Prevent overflow */
+            background-image: url('assets/contact_img.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1; /* Place overlay above the background */
+        }
+
+        .contact-section {
+            position: relative;
+            z-index: 2; /* Content above overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            height: 100%; /* Full height */
+            padding: 20px; /* Add padding if needed */
+            color: white; /* Text color for readability */
+        }
+    </style>
 </head>
+<body>
+
 <header id="main-header">
     <div class="menu-icon">&#9776;</div>
     <div class="logo">
@@ -25,68 +65,61 @@
 
 <!-- Side Navigation Menu -->
 <nav id="side-menu" class="side-menu">
-    <div class="menu-icon">&#9776;</div> <!-- Menu icon inside the menu as a close button -->
+    <div class="menu-icon">&#9776;</div>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Properties</a></li>
-        <li><a id="contact-link" href="contact.html">Contact</a></li> <!-- Conditional Contact link -->
+        <li><a id="contact-link" href="contact.html">Contact</a></li>
         <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Resident Login</a></li>
     </ul>
 </nav>
 
-<body>
+<div class="parallax">
+    <div class="overlay"></div> <!-- Overlay div for darkening the background -->
+    <div class="contact-section">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2 class="contact-heading">Contact Us</h2>
+                <p>We’re here to help with any inquiries about our properties or services.</p>
 
-<!-- Contact Section with Background Image -->
-<div class="contact-section" style="background-image: url('assets/contact_img.jpg');">
-    <div class="overlay"></div>
-    <div class="contact-content">
-        
-        <!-- Centered Contact Heading -->
-             
-        <!-- Left-Aligned Contact Information -->
-		    <div class="contact-info">
-			<h2 class="contact-heading">Contact Us</h2>
-            <p>We’re here to help with any inquiries about our properties or services.</p>
+                <div class="contact-item">
+                    <i class="fa fa-phone contact-icon" aria-hidden="true"></i>
+                    <div class="contact-info-text">
+                        <h3>Call Us:</h3>
+                        <p>1 (310) 309-0736</p>
+                    </div>
+                </div>
 
-            <div class="contact-item">
-                <i class="fa fa-phone contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Call Us:</h3>
-                    <p>1 (310) 309-0736</p>
+                <div class="contact-item">
+                    <i class="fa fa-map-marker contact-icon" aria-hidden="true"></i>
+                    <div class="contact-info-text">
+                        <h3>Location:</h3>
+                        <p>2307 Watterson Trail, Suite 200, Louisville, KY 40299</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa fa-clock-o contact-icon" aria-hidden="true"></i>
+                    <div class="contact-info-text">
+                        <h3>Business Hours:</h3>
+                        <p>Mon – Fri: 8 am – 5 pm, Sat: Closed, Sun: Closed</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-item">
-                <i class="fa fa-map-marker contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Location:</h3>
-                    <p>2307 Watterson Trail, Suite 200, Louisville, KY 40299</p>
-                </div>
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="address" placeholder="Address">
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-
-            <div class="contact-item">
-                <i class="fa fa-clock-o contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Business Hours:</h3>
-                    <p>Mon – Fri: 8 am – 5 pm, Sat: Closed, Sun: Closed</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="address" placeholder="Address">
-                <textarea name="message" placeholder="Message"></textarea>
-                <button type="submit">Submit</button>
-            </form>
         </div>
     </div>
 </div>
-
-</body>
 
 <!-- Side Menu JavaScript -->
 <script>
@@ -152,5 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
-</html>
 
+<script>
+document.addEventListener('mousemove', (e) => {
+    const parallax = document.querySelector('.parallax');
+    const x = (window.innerWidth - e.pageX * 2) / 100;
+    const y = (window.innerHeight - e.pageY * 2) / 100;
+
+    parallax.style.backgroundPosition = `${x}px ${y}px`;
+});
+</script>
+
+</body>
+</html>

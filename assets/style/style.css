@@ -509,15 +509,18 @@ p, a, button, input, textarea {
 .contact-section {
     position: relative;
     display: flex;
+	z-index: 2; /* Ensure content is above the background */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    padding: 50px;
+    padding: 20px;
     background-image: url('assets/contact_img.jpg'); /* Adds background image */
     background-size: cover;
     background-position: center;
     color: #fff;
     height: 100vh;
+	    text-align: center;
+    color: white; /* Adjust text color for readability */
 }
 
 .overlay {
@@ -641,5 +644,12 @@ p, a, button, input, textarea {
 .business-hours {
     margin-top: 15px; /* Adds space before business hours */
 }
-
+.parallax {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Adjust height as necessary */
+    background-image: url('assets/contact_img.jpg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+}
 

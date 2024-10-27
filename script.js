@@ -79,6 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = mobilePath; 
     }
 });
+document.addEventListener('mousemove', (e) => {
+    const parallax = document.querySelector('.parallax');
+    const x = (e.clientX / window.innerWidth) * 100; // Adjust for effect
+    const y = (e.clientY / window.innerHeight) * 100;
+
+    parallax.style.backgroundPosition = `${x}% ${y}%`;
+});
+
 
 
 
