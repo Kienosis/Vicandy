@@ -113,7 +113,25 @@ const swiper = new Swiper('.swiper-container', {
         disableOnInteraction: false,
     },
 });
+<script>
+function showPopup(id) {
+    document.getElementById(id).style.display = 'flex';
+}
 
+function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+// Close the popup when clicking outside the popup content
+window.addEventListener('click', function(event) {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+</script>
 
 
 
