@@ -1,10 +1,9 @@
-/* m_style.css */
-
 /* General reset for mobile */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+    background-color: #f8f8f8; /* Light background for better contrast */
 }
 
 /* Header styles */
@@ -13,6 +12,7 @@ body {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center align items */
     padding: 1rem;
+    background-color: rgba(128, 128, 128, 0.9); /* Slightly darker background for header */
 }
 
 /* Side menu styles */
@@ -25,10 +25,18 @@ body {
 /* Hero Section */
 .hero {
     text-align: center; /* Center text for mobile */
+    position: relative; /* Position relative for video overlay */
 }
 
+.hero-video {
+    width: 100%; /* Full width video for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Hero Content */
 .hero-content {
     padding: 1rem; /* Add padding for better spacing */
+    color: var(--white-color); /* Ensure text is readable */
 }
 
 /* Facts Section */
@@ -39,11 +47,20 @@ body {
     padding: 1rem;
 }
 
+/* Fact items */
+.fact {
+    max-width: 90%; /* Limit width on mobile */
+    text-align: center; /* Center align text */
+    padding: 1rem; /* Add padding for spacing */
+    margin: 0.5rem 0; /* Space between facts */
+}
+
 /* CTA Section */
 .cta-section {
     display: flex;
     flex-direction: column; /* Stack CTA elements */
     align-items: center; /* Center align CTA */
+    padding: 1rem;
 }
 
 /* About Us Section */
@@ -57,6 +74,7 @@ footer {
     text-align: center; /* Center text */
     padding: 1rem;
 }
+
 /* Contact Section */
 .contact-section {
     padding: 1rem; /* Add padding for better spacing */
@@ -93,10 +111,37 @@ footer {
     width: 90%; /* Make inputs take most of the width */
     margin: 0.5rem 0; /* Add margin for spacing */
     padding: 10px; /* Add padding for comfort */
+    border: 1px solid #ccc; /* Add border for visibility */
+    border-radius: 5px; /* Round corners for inputs */
 }
 
 /* Submit button */
 .contact-form button {
     width: 90%; /* Match button width with inputs */
     padding: 10px; /* Add padding */
+    background-color: var(--primary-color); /* Primary button color */
+    color: #fff; /* White text for contrast */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round corners */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.contact-form button:hover {
+    background-color: var(--hover-color); /* Change color on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Mobile-specific adjustments */
+    .hero-content h2 {
+        font-size: 1.8em; /* Smaller heading for mobile */
+    }
+
+    .cta-text h2 {
+        font-size: 1.5em; /* Smaller heading in CTA */
+    }
+
+    .fact {
+        font-size: 1.2em; /* Adjust font size for facts */
+    }
 }
