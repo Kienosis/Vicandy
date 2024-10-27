@@ -69,11 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
-        if (window.innerWidth <= 768) { // Check if the screen width is 768px or less
-            const currentPath = window.location.pathname; // Get the current path
-            const mobilePath = currentPath.replace(/([^\/]+)(?=\.\w+$)/, 'm_$1'); // Modify the path
+    if (window.innerWidth <= 768) { // Check if the screen width is 768px or less
+        const currentPath = window.location.pathname; // Get the current path
+        const mobilePath = currentPath.replace(/([^\/]+)(?=\.\w+$)/, 'm_$1'); // Modify the path
+        
+        // Construct the new mobile path
+        const mobileVersionPath = '/mobile/' + mobilePath; 
 
-            window.location.href = '/mobile/' + mobilePath; // Redirect to mobile version
-        }
+        // Redirect to mobile version
+        window.location.href = mobileVersionPath; 
+    }
 });
+
 
