@@ -652,4 +652,11 @@ p, a, button, input, textarea {
     background-size: cover;
     background-position: center;
 }
+/* Footer */
+footer {
+    background-color: #4c4c4c;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
 

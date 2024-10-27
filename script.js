@@ -87,24 +87,31 @@ document.addEventListener('mousemove', (e) => {
     parallax.style.backgroundPosition = `${x}% ${y}%`;
 });
 
-var swiper = new Swiper(".swiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2,
-    slideShadows: true
-  },
-  spaceBetween: 60,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  }
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: -50, // Pulls the side slides closer
+        depth: 200,
+        modifier: 1.5,
+        slideShadows: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
 });
 
 

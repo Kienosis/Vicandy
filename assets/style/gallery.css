@@ -170,6 +170,7 @@ p, a, button, input, textarea {
 .side-menu.open {
     left: 0;
 }
+
 /* Language Switcher */
 .language-switcher {
     display: flex;
@@ -186,54 +187,16 @@ p, a, button, input, textarea {
     text-decoration: underline;
 }
 
-/* Header Styling */
-#main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: var(--header-bg-color);
-    color: var(--white-color);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 3;
-    transition: background-color 0.3s ease;
-}
-
-/* Centered Logo Styling */
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    color: var(--white-color);
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Hero Section Styling */
+/* Hero Section */
 #hero-banner {
-    margin-top: 100px; /* Ensures it clears the fixed header */
+    margin-top: 100px;
     padding: 50px 20px;
     text-align: center;
     background-color: #f5f5f5;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .hero-content h2 {
     font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
     color: #333;
 }
 
@@ -242,121 +205,62 @@ p, a, button, input, textarea {
     color: #666;
 }
 
-/* Section Background Gradient */
-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(171, 102, 255, 1) 0%, rgba(116, 182, 247, 1) 90%);
-    overflow: hidden;
-}
-
-/* Swiper Container */
-.swiper {
+/* Swiper Styling */
+.swiper-container {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-/* Swiper Slide Styling */
 .swiper-slide {
-    width: 300px;
+    width: 400px;
     height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    transition: filter 0.3s ease, transform 0.3s ease;
     background-size: cover;
     background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-/* Slide Background Images */
-.swiper-slide--one {
-    background: linear-gradient(to top, rgba(15, 32, 39, 0.7), rgba(32, 58, 67, 0)), url('assets/photos/photo1.jpg') no-repeat center/cover;
+.slide-content {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    font-size: 0.9rem; /* Adjust font size */
+    position: absolute;
+    bottom: 0;
 }
-/* Repeat for additional slides as swiper-slide--two, swiper-slide--three, etc. */
 
-/* Active Slide (No Blur) */
-.swiper-slide-active {
-    filter: blur(0px);
-    transform: scale(1.05);
+.swiper-slide h2 {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
-/* Pagination Bullets */
+.swiper-slide p {
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+}
+
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
     background: #ffffff;
 }
 
-/* Slide Category Tag Styling */
-.swiper-slide span {
-    text-transform: uppercase;
-    color: #ffffff;
-    background: #1b7402;
-    padding: 7px 18px 7px 25px;
-    display: inline-block;
-    border-radius: 0 20px 20px 0px;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-family: "Open Sans", sans-serif;
-}
 
-/* Slide Title Styling */
-.swiper-slide h2 {
-    color: #ffffff;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.4;
-    margin-bottom: 15px;
-    padding: 25px 45px 0 25px;
-}
-
-/* Slide Location Styling */
-.swiper-slide p {
-    color: #ffffff;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    padding: 0 25px 35px 25px;
-}
-
-.swiper-slide svg {
-    color: #ffffff;
-    width: 22px;
-    height: 22px;
-    margin-right: 7px;
-}
-
-/* Adjust Swiper Shadow for 3D Effect */
-.swiper-3d .swiper-slide-shadow-left,
-.swiper-3d .swiper-slide-shadow-right {
-    background-image: none;
-}
-
-/* Media Query for Smaller Devices */
-@media (max-width: 768px) {
-    .swiper-container {
-        height: 350px; /* Reduce height for smaller screens */
-    }
-
-    #hero-banner {
-        text-align: center; /* Ensure hero banner stays centered */
-    }
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
     background-color: #4c4c4c;
     color: #ffffff;
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 50px;
 }
