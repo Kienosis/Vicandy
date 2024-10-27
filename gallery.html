@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctenos | Vicandy Properties</title>
+    <title>Vicandy Properties | Louisville Rental Homes</title>
     <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+<body>
+
 <header id="main-header">
     <div class="menu-icon">&#9776;</div>
     <div class="logo">
@@ -14,11 +15,11 @@
     </div>
     <div class="header-right">
         <div class="language-switcher">
-            <a href="contact.html">Inglés</a>
-            <a href="contact_es.html">Español</a>
+            <a href="index.html">English</a>
+            <a href="index_es.html">Español</a>
         </div>
         <div class="login-button">
-            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Inicio de Sesión Residentes</a>
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Resident Login</a>
         </div>
     </div>
 </header>
@@ -35,58 +36,20 @@
         <li><a id="contact-link" href="contact.html">Contact</a></li>        
     </ul>
 </nav>
-
-<body>
-
-<!-- Contact Section with Background Image -->
-<div class="contact-section" style="background-image: url('assets/contact_img.jpg');">
-    <div class="overlay"></div>
-    <div class="contact-content">
-        
-        <!-- Centered Contact Heading -->
-        <div class="contact-info">
-            <h2 class="contact-heading">Contáctenos</h2>
-            <p>Estamos aquí para ayudar con cualquier consulta sobre nuestras propiedades o servicios.</p>
-
-            <div class="contact-item">
-                <i class="fa fa-phone contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Llámamos:</h3>
-                    <p>1 (310) 309-0736</p>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa fa-map-marker contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Ubicación:</h3>
-                    <p>2307 Watterson Trail, Suite 200, Louisville, KY 40299</p>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa fa-clock-o contact-icon" aria-hidden="true"></i>
-                <div class="contact-info-text">
-                    <h3>Horario de Atención:</h3>
-                    <p>Lun – Vie: 8 am – 5 pm, Sáb: Cerrado, Dom: Cerrado</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
-                <input type="text" name="address" placeholder="Dirección">
-                <textarea name="message" placeholder="Mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+<!-- Photo Gallery Section -->
+<section id="gallery" class="gallery-section">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+        <img src="assets/gallery/photo1.jpg" alt="Property Interior" />
+        <img src="assets/gallery/photo2.jpg" alt="Neighborhood view" />
+        <!-- Add more images or videos as needed -->
     </div>
-</div>
+</section>
 
-</body>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Vicandy Properties. All rights reserved.</p>
+</footer>
 
 <!-- Side Menu JavaScript -->
 <script>
@@ -152,4 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+
+</body>
 </html>
