@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vicandy Properties ofrece hermosas casas unifamiliares en alquiler en Louisville, KY. Experimenta comodidad, privacidad y conveniencia en comunidades bien mantenidas.">
+    <meta name="keywords" content="propiedades de alquiler en Louisville, casas unifamiliares, Vicandy Properties, gestión de propiedades, alquileres en Louisville">
+    <meta name="robots" content="index, follow">
+    <title>Vicandy Properties | Casas de Alquiler en Louisville</title>
+    <link rel="stylesheet" href="assets/style/m_style.css"> <!-- Referencia al CSS móvil -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header id="main-header">
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">
+        <h1>Vicandy Properties</h1>
+    </div>
+    <div class="header-right">
+        <div class="language-switcher">
+            <a href="index.html">Inglés</a>
+            <a href="index_es.html">Español</a>
+        </div>
+        <div class="login-button">
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Inicio de sesión de Residentes</a>
+        </div>
+    </div>
+</header>
+
+<!-- Menú de Navegación Lateral -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Propiedades</a></li>
+        <li><a id="contact-link" href="contact_es.html">Contacto</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Inicio de sesión de Residentes</a></li>
+    </ul>
+</nav>
+
+<!-- Sección Principal -->
+<section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-video" loading="lazy">
+        <source src="assets/2801656-hd_1280_720_24fps.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+    <div class="hero-content">
+        <h2>Encuentra Tu Próximo Hogar con Nosotros</h2>
+        <div class="hero-divider"></div>
+        <p>Experimenta la comodidad y privacidad de vivir en una casa unifamiliar en comunidades bien mantenidas.</p>
+    </div>
+</section>
+
+<!-- Sección de Hechos -->
+<section id="facts" class="facts-section">
+    <div class="fact">
+        <h2>Más de 40 Propiedades</h2>
+        <p>Casas unifamiliares disponibles para alquiler.</p>
+    </div>
+    <div class="fact">
+        <h2>Mantenimiento de Calidad</h2>
+        <p>Equipos dedicados asegurando altos estándares.</p>
+    </div>
+    <div class="fact">
+        <h2>Espacios Aceptan Mascotas</h2>
+        <p>Alojamientos para tus miembros peludos de la familia.</p>
+    </div>
+    <div class="fact">
+        <h2>Ubicaciones Principales</h2>
+        <p>Cerca de escuelas, parques y servicios.</p>
+    </div>
+</section>
+
+<!-- Sección CTA -->
+<section id="cta-section" class="cta-section">
+    <div class="cta-content">
+        <img src="assets/cta_image.jpg" alt="Espacio de vida acogedor con un perro" class="cta-image">
+        <div class="cta-text">
+            <h2>¿Listo para Encontrar Tu Nuevo Hogar?</h2>
+            <p>Experimenta la comodidad de vivir en una casa unifamiliar en nuestras hermosas y bien mantenidas propiedades. Aplica hoy para asegurar tu nuevo hogar.</p>
+            <a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank" class="btn-primary">Aplica Ahora</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Acerca de Nosotros -->
+<section id="about-us" class="about-section">
+    <h2>Acerca de Vicandy Properties</h2>
+    <p>En Vicandy Properties, nos enorgullecemos de ofrecer casas unifamiliares de alta calidad y bien mantenidas para alquiler en las principales ubicaciones de Louisville. Nuestro compromiso con un excelente servicio y valores comunitarios nos convierte en una opción confiable para las familias que buscan un lugar cómodo y seguro al que llamar hogar.</p>
+</section>
+
+<!-- Sección de Galería de Fotos -->
+<section id="gallery" class="gallery-section">
+    <h2>Galería de Fotos</h2>
+    <div class="gallery">
+        <img src="assets/gallery/photo1.jpg" alt="Interior de Propiedad" />
+        <img src="assets/gallery/photo2.jpg" alt="Vista del Vecindario" />
+        <!-- Agregar más imágenes o videos según sea necesario -->
+    </div>
+</section>
+
+<!-- Pie de Página -->
+<footer>
+    <p>&copy; 2024 Vicandy Properties. Todos los derechos reservados.</p>
+</footer>
+
+<!-- JavaScript para el Menú Lateral -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon');
+    const menuIconInside = sideMenu.querySelector('.menu-icon');
+    const firstMenuItem = sideMenu.querySelector('a');
+
+    function toggleMenu(event) {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+        if (sideMenu.classList.contains('open')) {
+            firstMenuItem.focus();
+        }
+    }
+
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape' && sideMenu.classList.contains('open')) {
+            sideMenu.classList.remove('open');
+            menuIconHeader.focus();
+        }
+    }
+
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+</script>
+
+</body>
+</html>

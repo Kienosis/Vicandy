@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos | Vicandy Properties</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header id="main-header">
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">
+        <h1>Vicandy Properties</h1>
+    </div>
+    <div class="header-right">
+        <div class="language-switcher">
+            <a href="contact.html">Inglés</a>
+            <a href="contact_es.html">Español</a>
+        </div>
+        <div class="login-button">
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Inicio de Sesión Residentes</a>
+        </div>
+    </div>
+</header>
+
+<!-- Side Navigation Menu -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon">&#9776;</div> <!-- Menu icon inside the menu as a close button -->
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Propiedades</a></li>
+        <li><a id="contact-link" href="contact_es.html">Contáctenos</a> <!-- Conditional Contact link --></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Inicio de Sesión Residentes</a></li>
+    </ul>
+</nav>
+
+<body>
+
+<!-- Contact Section with Background Image -->
+<div class="contact-section" style="background-image: url('assets/contact_img.jpg');">
+    <div class="overlay"></div>
+    <div class="contact-content">
+        
+        <!-- Centered Contact Heading -->
+        <div class="contact-info">
+            <h2 class="contact-heading">Contáctenos</h2>
+            <p>Estamos aquí para ayudar con cualquier consulta sobre nuestras propiedades o servicios.</p>
+
+            <div class="contact-item">
+                <i class="fa fa-phone contact-icon" aria-hidden="true"></i>
+                <div class="contact-info-text">
+                    <h3>Llámamos:</h3>
+                    <p>1 (310) 309-0736</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa fa-map-marker contact-icon" aria-hidden="true"></i>
+                <div class="contact-info-text">
+                    <h3>Ubicación:</h3>
+                    <p>2307 Watterson Trail, Suite 200, Louisville, KY 40299</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa fa-clock-o contact-icon" aria-hidden="true"></i>
+                <div class="contact-info-text">
+                    <h3>Horario de Atención:</h3>
+                    <p>Lun – Vie: 8 am – 5 pm, Sáb: Cerrado, Dom: Cerrado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="text" name="address" placeholder="Dirección">
+                <textarea name="message" placeholder="Mensaje"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<!-- Side Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon');
+    const menuIconInside = sideMenu.querySelector('.menu-icon');
+    const firstMenuItem = sideMenu.querySelector('a');
+
+    function toggleMenu(event) {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+        if (sideMenu.classList.contains('open')) {
+            firstMenuItem.focus();
+        }
+    }
+
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape' && sideMenu.classList.contains('open')) {
+            sideMenu.classList.remove('open');
+            menuIconHeader.focus();
+        }
+    }
+
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+</script>
+
+<!-- Conditional Contact Link JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const contactLink = document.getElementById('contact-link');
+    const isSpanish = window.location.pathname.includes('_es');
+    contactLink.setAttribute('href', isSpanish ? 'contact_es.html' : 'contact.html');
+});
+</script>
+
+<!-- Language Detection and Redirection -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userLang = navigator.language || navigator.userLanguage;
+    const currentPath = window.location.pathname;
+    const redirectFlag = sessionStorage.getItem('languageRedirect');
+
+    // Check if a redirect has already occurred to avoid continuous refresh
+    if (!redirectFlag) {
+        if (userLang.startsWith('es') && currentPath !== '/index_es.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index_es.html';
+        } else if (userLang.startsWith('en') && currentPath !== '/index.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index.html';
+        }
+    }
+});
+</script>
+</html>

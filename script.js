@@ -68,3 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+        if (window.innerWidth <= 768) { // Check if the screen width is 768px or less
+            const currentPath = window.location.pathname; // Get the current path
+            const mobilePath = currentPath.replace(/([^\/]+)(?=\.\w+$)/, 'm_$1'); // Modify the path
+
+            window.location.href = '/mobile/' + mobilePath; // Redirect to mobile version
+        }
+});
+
