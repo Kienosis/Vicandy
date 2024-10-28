@@ -16,8 +16,8 @@
     </div>
     <div class="header-right">
         <div class="language-switcher">
-            <a href="index.html">Inglés</a>
-            <a href="index_es.html">Español</a>
+            <a href="about.html">Inglés</a>
+            <a href="about_es.html">Español</a>
         </div>
         <div class="login-button">
             <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Acceso Residentes</a>
@@ -51,19 +51,19 @@
         <h3>Conoce a Nuestro Equipo</h3>
         <div class="team-cards">
             <div class="team-card" onclick="showPopup('owner1')">
-                <img src="assets/team/owner1.jpg" alt="CEO - John Doe">
+                <img src="assets/team/Owner1.jpg" alt="CEO - John Doe">
                 <h4>John Doe</h4>
                 <p>Director Ejecutivo</p>
                 <p class="intro">Líder visionario con 15 años en bienes raíces.</p>
             </div>
             <div class="team-card" onclick="showPopup('owner2')">
-                <img src="assets/team/owner2.jpg" alt="COO - Jane Smith">
+                <img src="assets/team/Owner2.jpg" alt="COO - Jane Smith">
                 <h4>Jane Smith</h4>
                 <p>Directora de Operaciones</p>
                 <p class="intro">Dedicada a la excelencia operativa y al cuidado de los residentes.</p>
             </div>
             <div class="team-card" onclick="showPopup('manager')">
-                <img src="assets/team/manager.jpg" alt="Gerente de Propiedad - Michael Johnson">
+                <img src="assets/team/Manager.jpg" alt="Gerente de Propiedad - Michael Johnson">
                 <h4>Michael Johnson</h4>
                 <p>Gerente de Propiedad</p>
                 <p class="intro">Garantiza la calidad y seguridad en todas las propiedades.</p>
@@ -116,5 +116,94 @@
     </section>
 </main>
 <script src="assets/scripts/main.js"></script>
+<!-- Popup JavaScript with Animation -->
+<script>
+function showPopup(id) {
+    const popup = document.getElementById(id);
+    popup.style.display = 'flex';
+    popup.classList.add('fade-in'); // Add animation class
+}
+
+function closePopup(id) {
+    const popup = document.getElementById(id);
+    popup.classList.remove('fade-in');
+    popup.style.display = 'none';
+}
+
+// Close popup when clicking outside the content
+window.addEventListener('click', function(event) {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => {
+        if (event.target === popup) {
+            popup.classList.remove('fade-in');
+            popup.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<!-- Side Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon');
+    const menuIconInside = sideMenu.querySelector('.menu-icon');
+    const firstMenuItem = sideMenu.querySelector('a');
+
+    function toggleMenu(event) {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+        if (sideMenu.classList.contains('open')) {
+            firstMenuItem.focus();
+        }
+    }
+
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape' && sideMenu.classList.contains('open')) {
+            sideMenu.classList.remove('open');
+            menuIconHeader.focus();
+        }
+    }
+
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+</script>
+
+<!-- Conditional Contact Link JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const contactLink = document.getElementById('contact-link');
+    const isSpanish = window.location.pathname.includes('_es');
+    contactLink.setAttribute('href', isSpanish ? 'contact_es.html' : 'contact.html');
+});
+</script>
+
+<!-- Language Detection and Redirection -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userLang = navigator.language || navigator.userLanguage;
+    const currentPath = window.location.pathname;
+    const redirectFlag = sessionStorage.getItem('languageRedirect');
+
+    if (!redirectFlag) {
+        if (userLang.startsWith('es') && currentPath !== '/index_es.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index_es.html';
+        } else if (userLang.startsWith('en') && currentPath !== '/index.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index.html';
+        }
+    }
+});
+</script>
 </body>
 </html>
