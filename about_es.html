@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vicandy Properties | Sobre Nosotros</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header id="main-header">
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">
+        <h1>Vicandy Properties</h1>
+    </div>
+    <div class="header-right">
+        <div class="language-switcher">
+            <a href="index.html">Inglés</a>
+            <a href="index_es.html">Español</a>
+        </div>
+        <div class="login-button">
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Acceso Residentes</a>
+        </div>
+    </div>
+</header>
+
+<!-- Menú de navegación lateral -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li><a href="index_es.html">Inicio</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Acceso Residentes</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Buscar Propiedades</a></li>
+        <li><a id="gallery-link" href="gallery_es.html">Galería de Fotos</a></li>
+        <li><a id="about-link" href="about_es.html">Sobre Nosotros</a></li>
+        <li><a id="contact-link" href="contact_es.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="about-content">
+        <h2>Sobre Vicandy Properties</h2>
+        <p>¡Bienvenidos a Vicandy Properties! Estamos dedicados a proporcionar hogares de alquiler de calidad en Louisville, KY. Fundada con la visión de hacer que la experiencia de alquilar sea sencilla y agradable, Vicandy Properties es conocida por su compromiso con la satisfacción del cliente y la excelencia en la gestión de propiedades.</p>
+        <h3>Nuestra Misión</h3>
+        <p>Nuestra misión es ofrecer hogares cómodos y bien mantenidos donde los residentes puedan sentirse a gusto y concentrarse en lo que más les importa. Nos enorgullecemos de ser receptivos, transparentes y respetuosos con las necesidades de nuestra comunidad.</p>
+    </section>
+    
+    <!-- Sección Nuestro Equipo -->
+    <section class="team-section">
+        <h3>Conoce a Nuestro Equipo</h3>
+        <div class="team-cards">
+            <div class="team-card" onclick="showPopup('owner1')">
+                <img src="assets/team/owner1.jpg" alt="CEO - John Doe">
+                <h4>John Doe</h4>
+                <p>Director Ejecutivo</p>
+                <p class="intro">Líder visionario con 15 años en bienes raíces.</p>
+            </div>
+            <div class="team-card" onclick="showPopup('owner2')">
+                <img src="assets/team/owner2.jpg" alt="COO - Jane Smith">
+                <h4>Jane Smith</h4>
+                <p>Directora de Operaciones</p>
+                <p class="intro">Dedicada a la excelencia operativa y al cuidado de los residentes.</p>
+            </div>
+            <div class="team-card" onclick="showPopup('manager')">
+                <img src="assets/team/manager.jpg" alt="Gerente de Propiedad - Michael Johnson">
+                <h4>Michael Johnson</h4>
+                <p>Gerente de Propiedad</p>
+                <p class="intro">Garantiza la calidad y seguridad en todas las propiedades.</p>
+            </div>
+        </div>
+
+        <!-- Contenedores de Popup -->
+        <div id="owner1" class="popup">
+            <div class="popup-content">
+               <span class="close-icon" onclick="closePopup('owner1')">&times;</span>
+                <img src="assets/team/Owner1.jpg" alt="CEO - John Doe" class="popup-image">
+                <h3>John Doe</h3>
+                <p><strong>Director Ejecutivo</strong></p>
+                <p>John es el visionario detrás de Vicandy Properties, con más de 15 años de experiencia en bienes raíces. Su liderazgo estratégico ha convertido a la empresa en un proveedor confiable de alquileres en Louisville.</p>
+            </div>
+        </div>
+        
+        <div id="owner2" class="popup">
+            <div class="popup-content">
+               <span class="close-icon" onclick="closePopup('owner1')">&times;</span>
+                <img src="assets/team/Owner2.jpg" alt="COO - Jane Smith" class="popup-image">
+                <h3>Jane Smith</h3>
+                <p><strong>Directora de Operaciones</strong></p>
+                <p>Jane supervisa las operaciones diarias, asegurando que todas las propiedades se mantengan a los más altos estándares. Su dedicación a la excelencia operativa y la satisfacción de los residentes impulsa nuestra misión.</p>
+            </div>
+        </div>
+        
+        <div id="manager" class="popup">
+            <div class="popup-content">
+                <span class="close-icon" onclick="closePopup('owner1')">&times;</span>
+                <img src="assets/team/Manager.jpg" alt="Gerente de Propiedad - Michael Johnson" class="popup-image">
+                <h3>Michael Johnson</h3>
+                <p><strong>Gerente de Propiedad</strong></p>
+                <p>Michael gestiona el mantenimiento de la propiedad y las relaciones con los inquilinos. Su compromiso con la calidad asegura que cada residente disfrute de un entorno seguro y bien mantenido.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials-section">
+        <h3>Lo Que Dicen Nuestros Residentes</h3>
+        <div class="testimonial">
+            <p>"Vivir en una propiedad de Vicandy ha sido una experiencia maravillosa. El equipo de gestión es receptivo y realmente se preocupa por los residentes."</p>
+            <span>- Sarah L.</span>
+        </div>
+        <div class="testimonial">
+            <p>"He estado alquilando con Vicandy durante más de 3 años y hacen que todo sea fácil y agradable!"</p>
+            <span>- Mark R.</span>
+        </div>
+    </section>
+</main>
+<script src="assets/scripts/main.js"></script>
+</body>
+</html>

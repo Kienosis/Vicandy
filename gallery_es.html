@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicandy Properties | Alquileres en Louisville</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/style/gallery.css">
+</head>
+<body>
+
+<header id="main-header">
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">
+        <h1>Vicandy Properties</h1>
+    </div>
+    <div class="header-right">
+        <div class="language-switcher">
+            <a href="index.html">Inglés</a>
+            <a href="index_es.html">Español</a>
+        </div>
+        <div class="login-button">
+            <a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank" class="btn-login">Acceso Residentes</a>
+        </div>
+    </div>
+</header>
+
+<!-- Menú de navegación lateral -->
+<nav id="side-menu" class="side-menu">
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li><a href="index_es.html">Inicio</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/portal/login" target="_blank">Acceso Residentes</a></li>
+        <li><a href="https://vicandyproperties.managebuilding.com/Resident/rental-application/new" target="_blank">Buscar Propiedades</a></li>
+        <li><a id="gallery-link" href="gallery_es.html">Galería de Fotos</a></li>
+        <li><a id="about-link" href="about_es.html">Sobre Nosotros</a></li>
+        <li><a id="contact-link" href="contact_es.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- Sección Hero -->
+<section id="hero-banner" class="hero">
+    <div class="hero-content">
+        <h2>Explora Nuestras Hermosas Propiedades</h2>
+        <p>Descubre impresionantes hogares de alquiler en Louisville con comodidad, privacidad y conveniencia.</p>
+    </div>
+</section>
+
+<section class="swiper-container">
+    <div class="swiper-wrapper">
+        <!-- Ejemplo de diapositivas para Fotos 1-12 -->
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo1.jpg');">
+            <div class="slide-content">
+                <h2>Hermosa Casa Victoriana</h2>
+                <p>Centro, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo2.jpg');">
+            <div class="slide-content">
+                <h2>Acogedor Refugio Suburbano</h2>
+                <p>Suburbio, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo3.jpg');">
+            <div class="slide-content">
+                <h2>Apartamento Moderno</h2>
+                <p>Riverside, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo4.jpg');">
+            <div class="slide-content">
+                <h2>Cabaña Rústica</h2>
+                <p>Cerca del Bosque, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo5.jpg');">
+            <div class="slide-content">
+                <h2>Penthouse Lujoso</h2>
+                <p>Centro, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo6.jpg');">
+            <div class="slide-content">
+                <h2>Casa de Campo Histórica</h2>
+                <p>Afueras, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo7.jpg');">
+            <div class="slide-content">
+                <h2>Casa Familiar Espaciosa</h2>
+                <p>Suburbio, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo8.jpg');">
+            <div class="slide-content">
+                <h2>Cabaña Frente al Lago</h2>
+                <p>Vista al Lago, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo9.jpg');">
+            <div class="slide-content">
+                <h2>Apartamento Tipo Estudio</h2>
+                <p>Centro, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo10.jpg');">
+            <div class="slide-content">
+                <h2>Dúplex Suburbano</h2>
+                <p>Suburbio, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo11.jpg');">
+            <div class="slide-content">
+                <h2>Casa Contemporánea</h2>
+                <p>Centro, Louisville, KY</p>
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url('assets/photos/photo12.jpg');">
+            <div class="slide-content">
+                <h2>Acogedor Bungalow</h2>
+                <p>Distrito Histórico, KY</p>
+            </div>
+        </div>
+
+        <!-- Agrega más diapositivas según sea necesario -->
+    </div>
+    <!-- Paginación y Navegación de Swiper -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</section>
+
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2024 Vicandy Properties. Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: -50,
+            depth: 300,
+            modifier: 1.2,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    });
+</script>
+<!-- JavaScript del menú lateral -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sideMenu = document.getElementById('side-menu');
+    const menuIconHeader = document.querySelector('#main-header .menu-icon');
+    const menuIconInside = sideMenu.querySelector('.menu-icon');
+    const firstMenuItem = sideMenu.querySelector('a');
+
+    function toggleMenu(event) {
+        event.stopPropagation();
+        sideMenu.classList.toggle('open');
+        if (sideMenu.classList.contains('open')) {
+            firstMenuItem.focus();
+        }
+    }
+
+    function closeMenuOnClickOutside(event) {
+        if (sideMenu.classList.contains('open') && !sideMenu.contains(event.target) && !menuIconHeader.contains(event.target)) {
+            sideMenu.classList.remove('open');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape' && sideMenu.classList.contains('open')) {
+            sideMenu.classList.remove('open');
+            menuIconHeader.focus();
+        }
+    }
+
+    menuIconHeader.addEventListener('click', toggleMenu);
+    menuIconInside.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+</script>
+
+<!-- Enlace de contacto condicional en español -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const contactLink = document.getElementById('contact-link');
+    const isSpanish = window.location.pathname.includes('_es');
+    contactLink.setAttribute('href', isSpanish ? 'contact_es.html' : 'contact.html');
+});
+</script>
+
+<!-- Detección de idioma y redirección -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userLang = navigator.language || navigator.userLanguage;
+    const currentPath = window.location.pathname;
+    const redirectFlag = sessionStorage.getItem('languageRedirect');
+
+    if (!redirectFlag) {
+        if (userLang.startsWith('es') && currentPath !== '/index_es.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index_es.html';
+        } else if (userLang.startsWith('en') && currentPath !== '/index.html') {
+            sessionStorage.setItem('languageRedirect', 'true');
+            window.location.href = 'index.html';
+        }
+    }
+});
+</script>
+</body>
+</html>
